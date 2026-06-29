@@ -1,5 +1,5 @@
 """
-Exam #1 / Problem set #1.
+Exam #1 / Problem set #4.
 - Your job is to complete the definitions of each function so that it achieves its indicated behavior.
 - You are welcome to create any additional functions you desire.
 - Do not write any code in the global scope, i.e. do not write code that is not within a function definition.
@@ -47,6 +47,33 @@ def generate_shopping_list():
 
     """
     # write your answer below this line
+    print("Welcome to the shopping list generator!\n")
+
+    shopping_list = {}
+
+    while True : 
+        item = input("Enter an item to your shopping list:").lower()
+
+        if item == 'finished' or item == 'done' :
+            break
+
+        quantity = input(f"How many {item} would you like?").lower()
+
+        shopping_list[item] = quantity
+
+    print("\nHere is your complete shopping list:")
+
+    for item, quantity in shopping_list.items(): 
+
+            print(f"- {item} ({quantity})")
+
+    print("\nThank you!")
+
+
+
+    
+
+
 
 
 # -------------------------------------- #

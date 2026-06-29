@@ -56,6 +56,53 @@ def qualify():
     """
     # write your code below this line
 
+    def get_salary() : 
+        salary = int(input("How much do you make per year?").replace("$","").replace(",",""))
+        return salary
+    
+    def get_home() : 
+        home = input("Do you own your home? (y/n)")
+        return home 
+    
+    def get_rent() : 
+        rent = int(input("How much do you pay in rent per month?").replace("$","").replace(",",""))
+        return rent
+
+    # will only run if get_home = "y"
+    def home_salary_checker(salary) : 
+
+        if salary >= 30000 : 
+            print("You qualify!") 
+        
+        else : 
+            print("Sorry, you don't qualify. Your income is too low." )
+        
+
+    def rent_checker(rent, salary) : 
+
+        if rent <= 0.05 * salary : 
+
+            print("You qualify!")
+
+        else : 
+
+            print("Sorry, you don't qualify. Your rent is too high.")
+        
+    
+    
+    print("Welcome to the credit qualifier!")
+
+    salary = get_salary()
+    home = get_home()
+
+    if home == "y" : 
+            home_salary_checker(salary)
+
+    elif home == "n" : 
+        rent = get_rent()
+
+        rent_checker(rent, salary)
+
 
 # -------------------------------------- #
 # Do not modify the code below this line #

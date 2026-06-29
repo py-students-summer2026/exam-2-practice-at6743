@@ -46,6 +46,33 @@ def encode(filepath):
         "fair": "exceedingly generous",
     }
     # write your code below this line
+    try : 
+         with open(filepath, mode="r", encoding="utf-8") as f : 
+            text = f.read()
+
+            old_text = text 
+        
+            for key, value in swaps.items() : 
+
+                text = text.replace(key, value)
+
+         with open(filepath, mode="w", encoding="utf-8") as f : 
+            f.write(text)
+
+         if old_text != text : 
+            return True 
+        
+         else : 
+            return False 
+    
+    except FileNotFoundError : 
+            return False 
+    
+        
+
+
+
+
 
 
 # -------------------------------------- #

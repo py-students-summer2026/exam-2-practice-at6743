@@ -25,7 +25,52 @@ def get_valid_day():
     :returns: The day the user entered, as an integer.  I.e., 1 for Monday, 2 for Tuesday, 3 for Wednesday etc.
     """
     # write your code below this line
+    keep_going = True
 
+    # accepted responses 
+    proper_noun = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    abbreviated = ["mon", "tue", "wed", "thurs", "fri", "sat", "sun"]
+
+
+    while keep_going : 
+
+        response = input("Enter the day of the week!")
+
+        if response.isdigit() : 
+        
+            if 1 <= int(response) <= 7 : 
+                
+                return int(response)
+                    
+                    
+            elif int(response) < 1 or int(response) > 7 : 
+                print("Invalid number!")
+
+        elif response.isalpha() : 
+            
+
+            if response.lower() in proper_noun : 
+                for i in range(len(proper_noun)) : 
+
+                    if response.lower() == proper_noun[i] : 
+                        return int(i + 1)
+
+                    
+            elif response.lower() not in abbreviated and response.lower() not in proper_noun : 
+                print("Invalid day!")
+
+
+            elif response.lower() in abbreviated : 
+                for i in range(len(abbreviated)) : 
+
+                    if response.lower() == abbreviated[i] : 
+                        return int(i + 1)
+                    
+        else : 
+            print("Huh?")
+                
+
+        
 
 # -------------------------------------- #
 # Do not modify the code below this line #
